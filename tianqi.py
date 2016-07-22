@@ -63,7 +63,7 @@ def get_city_weather(index, search_type=1):
         search = 'attractions'
     else:
         return -1
-    url_weather = 'https://api.heweather.com/x3/'+search+'?cityid='+index+'&key=ae7baaf41f1b4b30b843f278869ab903'
+    url_weather = 'https://api.heweather.com/x3/'+search+'?cityid='+index+'&key=和风天气key'
     req = urllib2.Request(url_weather)
     resp = urllib2.urlopen(req)
     context = resp.read()
@@ -79,8 +79,8 @@ def get_city_weather(index, search_type=1):
 
 #获取百度语音token
 def get_token():
-    api_key = "Y04ocKLDiaI4sB7X9eU6QnHY"
-    sec_key = "aae8d320c58cca180d6714c5f3e487ac"
+    api_key = "百度API Key"
+    sec_key = "百度Secret Key"
     url = url="https://openapi.baidu.com/oauth/2.0/token?grant_type=client_credentials&client_id="+api_key+"&client_secret="+sec_key
     req = urllib2.Request(url)
     resp = urllib2.urlopen(req)
@@ -89,7 +89,6 @@ def get_token():
 
 #获取需要的数据
 def get_wat():
-    # city = raw_input('请输入要查询的城市或景点：')
     city_id = "CN101280101"  #广州天气代码   
     city_weather = get_city_weather(city_id)
     a= city_weather['tmp']['max']
